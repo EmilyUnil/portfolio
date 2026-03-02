@@ -1,0 +1,705 @@
+/* Tourism Agency CSS - Premium Design */
+
+:root {
+  --brown-dark: #5d4e37;
+  --brown-light: #8b7355;
+  --brown-accent: #a89968;
+  --blue-dark: #2c5d87;
+  --blue-light: #4a90a4;
+  --blue-accent: #6ba3c0;
+  --text-light: #f5f1e8;
+  --text-dark: #2b2522;
+  --border-color: #e0d5c7;
+  --bg-light: #f9f7f4;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-dark);
+  background-color: var(--bg-light);
+}
+
+/* Header */
+.tourism-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(135deg, #fff9f5 0%, #faf7f4 100%);
+  border-bottom: 1px solid var(--border-color);
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.tourism-header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tourism-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--brown-dark);
+}
+
+.logo-icon {
+  color: var(--blue-dark);
+}
+
+.tourism-nav {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.tourism-nav a {
+  color: var(--text-dark);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.tourism-nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--brown-dark), var(--blue-dark));
+  transition: width 0.3s ease;
+}
+
+.tourism-nav a:hover::after {
+  width: 100%;
+}
+
+.nav-cta-btn {
+  background: linear-gradient(135deg, var(--blue-dark), var(--blue-light));
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(44, 93, 135, 0.2);
+}
+
+.nav-cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(44, 93, 135, 0.3);
+}
+
+/* Hero Section */
+.tourism-hero {
+  margin-top: 70px;
+  min-height: 600px;
+  background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue-light) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(168, 153, 104, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(107, 163, 192, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  text-align: center;
+  color: white;
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+  opacity: 0.95;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+}
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.stat-item {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+/* About Section */
+.tourism-about {
+  padding: 5rem 2rem;
+  background: white;
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.about-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--brown-dark);
+}
+
+.about-text p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text-dark);
+  margin-bottom: 1.5rem;
+  text-align: justify;
+}
+
+.about-features {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--blue-dark);
+  font-weight: 600;
+}
+
+.feature-item svg {
+  color: var(--brown-accent);
+}
+
+.about-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-placeholder {
+  width: 350px;
+  height: 350px;
+  background: linear-gradient(135deg, var(--blue-light) 0%, var(--blue-accent) 100%);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  box-shadow: 0 20px 40px rgba(44, 93, 135, 0.15);
+}
+
+/* Rooms Section */
+.tourism-rooms {
+  padding: 5rem 2rem;
+  background: linear-gradient(135deg, #faf7f4 0%, #f5f1e8 100%);
+}
+
+.rooms-header {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.rooms-header h2 {
+  font-size: 2.5rem;
+  color: var(--brown-dark);
+  margin-bottom: 0.5rem;
+}
+
+.rooms-header p {
+  font-size: 1.1rem;
+  color: var(--text-dark);
+  opacity: 0.8;
+}
+
+.rooms-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.room-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border: 1px solid var(--border-color);
+}
+
+.room-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.room-image-container {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
+
+.room-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.room-card:hover .room-image {
+  transform: scale(1.08);
+}
+
+.room-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(44, 93, 135, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.room-card:hover .room-overlay {
+  opacity: 1;
+}
+
+.room-details-btn {
+  background: var(--brown-accent);
+  color: white;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.room-details-btn:hover {
+  background: var(--brown-dark);
+}
+
+.room-content {
+  padding: 2rem;
+}
+
+.room-content h3 {
+  font-size: 1.5rem;
+  color: var(--brown-dark);
+  margin-bottom: 0.5rem;
+}
+
+.room-desc {
+  color: var(--text-dark);
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  opacity: 0.8;
+}
+
+.room-specs {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.spec {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--blue-dark);
+}
+
+.spec svg {
+  color: var(--brown-accent);
+}
+
+.room-features {
+  margin-bottom: 1.5rem;
+}
+
+.feature-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--brown-dark);
+  margin-bottom: 0.75rem;
+}
+
+.amenities-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.amenity-tag {
+  background: linear-gradient(135deg, rgba(168, 153, 104, 0.1), rgba(107, 163, 192, 0.1));
+  border: 1px solid var(--border-color);
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  color: var(--text-dark);
+}
+
+.room-full-info {
+  background: linear-gradient(135deg, rgba(107, 163, 192, 0.05), rgba(168, 153, 104, 0.05));
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  border-left: 3px solid var(--blue-dark);
+}
+
+.feature-description {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-dark);
+}
+
+.room-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.room-price {
+  display: flex;
+  align-items: baseline;
+  gap: 0.3rem;
+}
+
+.price {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--blue-dark);
+}
+
+.period {
+  font-size: 0.85rem;
+  color: var(--text-dark);
+  opacity: 0.7;
+}
+
+.book-btn {
+  background: linear-gradient(135deg, var(--brown-dark), var(--brown-light));
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.book-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(93, 78, 55, 0.3);
+}
+
+/* Services Section */
+.tourism-services {
+  padding: 5rem 2rem;
+  background: white;
+}
+
+.tourism-services h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  color: var(--brown-dark);
+  margin-bottom: 3rem;
+}
+
+.services-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.service-card {
+  padding: 2rem;
+  text-align: center;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(168, 153, 104, 0.05), rgba(107, 163, 192, 0.05));
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  background: linear-gradient(135deg, rgba(168, 153, 104, 0.1), rgba(107, 163, 192, 0.1));
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.service-card svg {
+  color: var(--blue-dark);
+  margin-bottom: 1rem;
+}
+
+.service-card h3 {
+  font-size: 1.2rem;
+  color: var(--brown-dark);
+  margin-bottom: 0.75rem;
+}
+
+.service-card p {
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  line-height: 1.6;
+  opacity: 0.85;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  backdrop-filter: blur(4px);
+}
+
+.modal-content {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.modal-close:hover {
+  color: var(--brown-dark);
+}
+
+.modal-content h2 {
+  font-size: 1.8rem;
+  color: var(--brown-dark);
+  margin-bottom: 1.5rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-input,
+.form-textarea {
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 0.75rem;
+  font-size: 0.95rem;
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--blue-dark);
+  box-shadow: 0 0 0 3px rgba(44, 93, 135, 0.1);
+}
+
+.submit-btn {
+  background: linear-gradient(135deg, var(--brown-dark), var(--brown-light));
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(93, 78, 55, 0.3);
+}
+
+.contact-info {
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--text-dark);
+  font-size: 0.95rem;
+}
+
+.info-item svg {
+  color: var(--blue-dark);
+  flex-shrink: 0;
+}
+
+/* Footer */
+.tourism-footer {
+  background: linear-gradient(135deg, var(--brown-dark) 0%, var(--blue-dark) 100%);
+  color: var(--text-light);
+  padding: 3rem 2rem 1rem;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-section h4 {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.footer-section p {
+  opacity: 0.9;
+  line-height: 1.8;
+}
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  opacity: 0.8;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .tourism-header-content {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .tourism-nav {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .tourism-nav a {
+    width: 100%;
+  }
+
+  .about-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .about-text h2 {
+    font-size: 1.8rem;
+  }
+
+  .image-placeholder {
+    width: 100%;
+    max-width: 300px;
+    height: 300px;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .rooms-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .room-footer {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .book-btn {
+    width: 100%;
+  }
+}

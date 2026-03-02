@@ -1,0 +1,574 @@
+/* ========================================
+   ADVANCED ANIMATIONS & EFFECTS
+   Premium Level - Senior Developers
+   ======================================== */
+
+/* ========================================
+   3D TRANSFORMS
+   ======================================== */
+
+@supports (perspective: 1000px) {
+  .card-3d {
+    perspective: 1000px;
+    transform-style: preserve-3d;
+  }
+
+  .card-3d:hover {
+    transform: rotateX(5deg) rotateY(-5deg);
+  }
+}
+
+/* ========================================
+   MORPHING SHAPES
+   ======================================== */
+
+@keyframes morph {
+  0% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  50% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+  100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+}
+
+.morphing-element {
+  animation: morph 8s ease-in-out infinite;
+}
+
+/* ========================================
+   STAGGERED ANIMATIONS
+   ======================================== */
+
+@keyframes staggerFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stagger-item:nth-child(1) { animation: staggerFadeIn 0.5s ease-out 0s; }
+.stagger-item:nth-child(2) { animation: staggerFadeIn 0.5s ease-out 0.1s; }
+.stagger-item:nth-child(3) { animation: staggerFadeIn 0.5s ease-out 0.2s; }
+.stagger-item:nth-child(4) { animation: staggerFadeIn 0.5s ease-out 0.3s; }
+.stagger-item:nth-child(5) { animation: staggerFadeIn 0.5s ease-out 0.4s; }
+.stagger-item:nth-child(6) { animation: staggerFadeIn 0.5s ease-out 0.5s; }
+.stagger-item:nth-child(7) { animation: staggerFadeIn 0.5s ease-out 0.6s; }
+.stagger-item:nth-child(8) { animation: staggerFadeIn 0.5s ease-out 0.7s; }
+
+/* ========================================
+   GRADIENT ANIMATIONS
+   ======================================== */
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animated-gradient {
+  background: linear-gradient(
+    270deg,
+    #b88dd9,
+    #e8d5f2,
+    #ffc4a3,
+    #b88dd9
+  );
+  background-size: 300% 300%;
+  animation: gradientShift 8s ease infinite;
+}
+
+/* ========================================
+   GLASSMORPHISM EFFECT
+   ======================================== */
+
+.glassmorphic {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+}
+
+.glassmorphic:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25);
+}
+
+/* ========================================
+   NEUMORPHISM EFFECT
+   ======================================== */
+
+.neumorphic {
+  background: #f0f0f0;
+  border-radius: 20px;
+  box-shadow: 
+    9px 9px 16px #b8b9be,
+    -9px -9px 16px #ffffff;
+  transition: box-shadow 0.3s ease;
+}
+
+.neumorphic:hover {
+  box-shadow: 
+    inset 9px 9px 16px #b8b9be,
+    inset -9px -9px 16px #ffffff;
+}
+
+/* ========================================
+   TEXT ANIMATIONS
+   ======================================== */
+
+@keyframes textGlow {
+  0%, 100% {
+    text-shadow: 0 0 10px rgba(217, 124, 63, 0.5);
+    color: #b88dd9;
+  }
+  50% {
+    text-shadow: 0 0 30px rgba(217, 124, 63, 0.8);
+    color: #e8d5f2;
+  }
+}
+
+.text-glow {
+  animation: textGlow 2s ease-in-out infinite;
+}
+
+@keyframes textTypewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.text-typewriter {
+  animation: textTypewriter 3s steps(30, end);
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid #b88dd9;
+  animation: textTypewriter 3s steps(30, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: #b88dd9; }
+}
+
+/* ========================================
+   PARTICLE EFFECTS
+   ======================================== */
+
+@keyframes float-up {
+  0% {
+    opacity: 0;
+    transform: translateY(0) translateX(0);
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100vh) translateX(100px);
+  }
+}
+
+.particle {
+  position: fixed;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.particle-1 { animation: float-up 3s ease-out; }
+.particle-2 { animation: float-up 3.5s ease-out 0.2s; }
+.particle-3 { animation: float-up 4s ease-out 0.4s; }
+.particle-4 { animation: float-up 4.5s ease-out 0.6s; }
+.particle-5 { animation: float-up 5s ease-out 0.8s; }
+
+/* ========================================
+   SOPHISTICATED HOVER EFFECTS
+   ======================================== */
+
+@keyframes underlineExpand {
+  from {
+    left: 0;
+    right: auto;
+    width: 0;
+  }
+  to {
+    left: 0;
+    right: auto;
+    width: 100%;
+  }
+}
+
+.underline-hover {
+  position: relative;
+}
+
+.underline-hover::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #b88dd9;
+  transition: width 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.underline-hover:hover::after {
+  width: 100%;
+}
+
+/* ========================================
+   SMOOTH PAGE TRANSITIONS
+   ======================================== */
+
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-transition {
+  animation: pageEnter 0.6s ease-out;
+}
+
+/* ========================================
+   SVG STROKE ANIMATIONS
+   ======================================== */
+
+@keyframes strokeAnimation {
+  0% {
+    stroke-dashoffset: 1000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+svg.animated-svg path,
+svg.animated-svg circle,
+svg.animated-svg line {
+  stroke-dasharray: 1000;
+  animation: strokeAnimation 2s ease-in-out forwards;
+}
+
+/* ========================================
+   ADVANCED BUTTON EFFECTS
+   ======================================== */
+
+@keyframes buttonShine {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-shine::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  animation: buttonShine 3s infinite;
+}
+
+@keyframes buttonPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(217, 124, 63, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(217, 124, 63, 0);
+  }
+}
+
+.btn-pulse {
+  animation: buttonPulse 2s infinite;
+}
+
+/* ========================================
+   SCROLL REVEAL ANIMATIONS
+   ======================================== */
+
+@keyframes revealFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes revealFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes revealFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.scroll-reveal {
+  opacity: 0;
+}
+
+.scroll-reveal.active {
+  animation: revealFromBottom 0.6s ease-out forwards;
+}
+
+.scroll-reveal.active.from-left {
+  animation: revealFromLeft 0.6s ease-out forwards;
+}
+
+.scroll-reveal.active.from-right {
+  animation: revealFromRight 0.6s ease-out forwards;
+}
+
+/* ========================================
+   LOADING SPINNERS
+   ======================================== */
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes spinReverse {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+.spinner-reverse {
+  animation: spinReverse 1s linear infinite;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+.ripple-effect {
+  position: relative;
+}
+
+.ripple-effect::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1px;
+  height: 1px;
+  background: #b88dd9;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+
+.ripple-effect:active::after {
+  animation: ripple 0.6s ease-out;
+}
+
+/* ========================================
+   ADVANCED MODAL ANIMATIONS
+   ======================================== */
+
+@keyframes modalSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes backdropFade {
+  from {
+    opacity: 0;
+    backdrop-filter: blur(0);
+  }
+  to {
+    opacity: 1;
+    backdrop-filter: blur(4px);
+  }
+}
+
+.modal-wrapper {
+  animation: backdropFade 0.3s ease-out;
+}
+
+.modal-content {
+  animation: modalSlideUp 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ========================================
+   IMAGE HOVER EFFECTS
+   ======================================== */
+
+@keyframes imageZoom {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.15);
+  }
+}
+
+@keyframes imageGrayscale {
+  from {
+    filter: grayscale(0%);
+  }
+  to {
+    filter: grayscale(100%);
+  }
+}
+
+.image-zoom:hover {
+  animation: imageZoom 0.4s ease-out forwards;
+}
+
+.image-grayscale:hover {
+  animation: imageGrayscale 0.4s ease-out forwards;
+}
+
+/* ========================================
+   INFINITE LOOP ANIMATIONS
+   ======================================== */
+
+@keyframes infiniteSlide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.infinite-slide {
+  animation: infiniteSlide 20s linear infinite;
+}
+
+@keyframes infiniteBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.infinite-bounce {
+  animation: infiniteBounce 2s ease-in-out infinite;
+}
+
+/* ========================================
+   PERFORMANCE OPTIMIZATION
+   ======================================== */
+
+.gpu-accelerated {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* ========================================
+   MEDIA QUERIES FOR ANIMATIONS
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .glassmorphic {
+    background: rgba(30, 30, 30, 0.2);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .neumorphic {
+    background: #222222;
+    box-shadow: 
+      9px 9px 16px #0a0a0a,
+      -9px -9px 16px #3a3a3a;
+  }
+}
+
+/* ========================================
+   HIGH DPI SUPPORT
+   ======================================== */
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .high-dpi-border {
+    border-width: 0.5px;
+  }
+
+  .high-dpi-shadow {
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+  }
+}
